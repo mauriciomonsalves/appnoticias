@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Article } from 'src/app/interfaces';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 @Component({
   selector: 'app-article',
@@ -17,7 +18,7 @@ export class ArticleComponent implements OnInit {
 
   openArticle() {
     ///window.open(this.article.url,'_blank');
-    const browser =this.iab.crate(this.article.url)
+    const browser =this.iab.create(this.article.url)
     browser.show();
   }
 
